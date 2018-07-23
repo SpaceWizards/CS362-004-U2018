@@ -9,11 +9,13 @@
 int main(){
   //initialize the game
   struct gameState * gs = newGame();
-  int * kingdomCards = kingdomCards(7,8,9,10,11,12,13,14,15,16);
-  initializeGame(1,kingdomCards,1,gs);
+  int * cardsList = kingdomCards(7,8,9,10,11,12,13,14,15,16);
+  initializeGame(1,cardsList,1,gs);
   int coin_bonus = 0;
-  //cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus);
-
+  int i;
+  for (i = 0; i < 5; i++){
+    drawCard(0, gs);
+  }
   int beforesize = numHandCards(gs);
   gs->hand[0][0]= smithy;
   cardEffect(smithy, 0, 0, 0, gs, 0, &coin_bonus);

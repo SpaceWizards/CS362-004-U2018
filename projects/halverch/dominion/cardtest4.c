@@ -9,10 +9,14 @@
 int main(){
   //initialize the game
   struct gameState * gs = newGame();
-  int * kingdomCards = kingdomCards(7,8,9,10,11,12,13,14,15,16);
-  initializeGame(2,kingdomCards,1,gs);
+  int * cardsList = kingdomCards(7,8,9,10,11,12,13,14,15,16);
+  initializeGame(2,cardsList,1,gs);
   int coin_bonus = 0;
-  state->numActions = 0;
+  gs->numActions = 0;
+  int i;
+  for (i = 0; i < 5; i++){
+    drawCard(0, gs);
+  }
   int beforesize = numHandCards(gs);
   gs->hand[0][0]= adventurer;
   cardEffect(adventurer, 0, 0, 0, gs, 0, &coin_bonus);
@@ -26,16 +30,16 @@ int main(){
   }
   //check if last two cards are treasures
   if (gs->hand[0][numHandCards(gs)-1] > 6 || gs->hand[0][numHandCards(gs)-1] < 4){
-    printf("First card drawn NOT a treasure, card is: %d\0", gs->hand[0][numHandCards(gs)-1]);
+    printf("First card drawn NOT a treasure, card is: %d\n", gs->hand[0][numHandCards(gs)-1]);
   }
   else{
-    printf("First card drawn IS a treasure.")
+    printf("First card drawn IS a treasure.\n");
   }
   if (gs->hand[0][numHandCards(gs)-2] > 6 || gs->hand[0][numHandCards(gs)-2] < 4){
-    printf("Second card drawn NOT a treasure, card is: %d\0", gs->hand[0][numHandCards(gs)-2]);
+    printf("Second card drawn NOT a treasure, card is: %d\n", gs->hand[0][numHandCards(gs)-2]);
   }
   else{
-    printf("Second card drawn IS a treasure.")
+    printf("Second card drawn IS a treasure.\n");
   }
   //check if it was discarded
   if(gs->hand[0][0] == adventurer){

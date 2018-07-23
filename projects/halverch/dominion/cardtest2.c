@@ -9,12 +9,15 @@
 int main(){
   //initialize the game
   struct gameState * gs = newGame();
-  int * kingdomCards = kingdomCards(7,8,9,10,11,12,13,14,15,16);
-  initializeGame(2,kingdomCards,1,gs);
+  int * cardsList = kingdomCards(7,8,9,10,11,12,13,14,15,16);
+  initializeGame(2,cardsList,1,gs);
   int coin_bonus = 0;
-  //cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus);
-  //after running council_room, player's hand should be + 4 cards, - first card in hand
-  state->numBuys = 0;
+  int i;
+  for (i = 0; i < 5; i++){
+    drawCard(0, gs);
+  }
+  drawCard(1, gs);
+  gs->numBuys = 0;
   int beforesize = numHandCards(gs);
   gs->hand[0][0]= council_room;
   cardEffect(council_room, 0, 0, 0, gs, 0, &coin_bonus);
@@ -30,14 +33,14 @@ int main(){
     printf("Card was NOT given properly. Current hand size: %d\n", gs->handCount[1]);
   }
   else{
-    printf("Card WAS given properly.\n")
+    printf("Card WAS given properly.\n");
   }
   //check if number of buys went up
-  if (state->numBuys != 1){
+  if (gs->numBuys != 1){
     printf("Buy was NOT added properly. Current number of buys: %d\n", gs->numBuys);
   }
   else{
-    printf("Buy WAS added properly.")
+    printf("Buy WAS added properly.");
   }
   //check if it was discarded
   if(gs->hand[0][0] == council_room){

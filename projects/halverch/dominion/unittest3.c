@@ -18,7 +18,7 @@ int main(){
       printf("Card %d failed, returned %d\n", i, j);
     }
     else{
-      printf("Card %d succeeded\n");
+      printf("Card %d succeeded\n", i);
     }
   }
   return 0;
