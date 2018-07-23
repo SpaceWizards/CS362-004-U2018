@@ -5,19 +5,21 @@
 #include <assert.h>
 #include "rngs.h"
 
-//this tests the numHandCards function
+//this tests handCard function
 int main(){
   //initialize the game
   struct gameState * gs = newGame();
   int * kingdomCards = kingdomCards(7,8,9,10,11,12,13,14,15,16);
   initializeGame(1,kingdomCards,1,gs);
-  //numHandCards should be 5 at the start of the game
-  printf("starting numHandCards\n");
-  if (numHandCards(gs)!= 5){
-    printf("numHandCards failed: returned %d\n", numHandCards(gs));
+  printf("starting HandCard\n");
+  gs->hand[0][0] = 5;
+  state->whoseTurn = 0;
+  int i = handCard(0, gs);
+  if (i != 5){
+    printf("HandCard failed: returned %d\n", i);
   }
-  else {
-    printf("numHandCards Succeeded\n");
+  else{
+    printf("HandCard Succeeded\n");
   }
   return 0;
 }
