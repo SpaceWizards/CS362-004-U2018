@@ -29,7 +29,7 @@ int main(){
     printf("# of cards correct.\n");
   }
   //check if card was given to other players
-  if (gs->handCount[1] != 6){
+  if (gs->handCount[1] != 2){
     printf("Card was NOT given properly. Current hand size: %d\n", gs->handCount[1]);
   }
   else{
