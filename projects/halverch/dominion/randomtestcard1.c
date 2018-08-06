@@ -5,6 +5,7 @@
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
+#include <time.h>
 
 //this randomly tests the village card
 int main(){
@@ -25,7 +26,7 @@ int main(){
     //get a random # of cards in hand
     int disc = rand() % 6;
     int draw = rand() % 6;
-    for (i = 0; i < disc, i++){
+    for (i = 0; i < disc; i++){
       discardCard(0,0,gs,0);
     }
     for (i = 0; i < draw; i++){

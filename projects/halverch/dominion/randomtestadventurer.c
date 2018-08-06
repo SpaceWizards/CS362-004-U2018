@@ -3,8 +3,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <time.h>
 #include "rngs.h"
-
+#include <stdlib.h>
 //this randomly tests the adventurer card
 //This doesn't properly test based on what's in the deck, but whatever.
 
@@ -26,7 +27,7 @@ int main(){
     //get a random # of cards in hand
     int disc = rand() % 6;
     int draw = rand() % 6;
-    for (i = 0; i < disc, i++){
+    for (i = 0; i < disc; i++){
       discardCard(0,0,gs,0);
     }
     for (i = 0; i < draw; i++){
