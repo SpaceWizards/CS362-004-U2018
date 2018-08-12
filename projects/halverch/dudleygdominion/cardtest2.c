@@ -13,9 +13,8 @@ int main(){
   initializeGame(2,cardsList,1,gs);
   int coin_bonus = 0;
   int i;
-  for (i = 0; i < 5; i++){
-    drawCard(0, gs);
-  }
+  endTurn(gs);
+  endTurn(gs);
   drawCard(1, gs);
   gs->numBuys = 0;
   int beforesize = numHandCards(gs);

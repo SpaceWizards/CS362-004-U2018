@@ -10,13 +10,11 @@ int main(){
   //initialize the game
   struct gameState * gs = newGame();
   int * cardsList = kingdomCards(7,8,9,10,11,12,13,14,15,16);
-  initializeGame(2,cardsList,1,gs);
+  initializeGame(1,cardsList,1,gs);
   int coin_bonus = 0;
   gs->numActions = 0;
   int i;
-  for (i = 0; i < 5; i++){
-    drawCard(0, gs);
-  }
+  endTurn(gs);
   int beforesize = numHandCards(gs);
   gs->hand[0][0]= village;
   cardEffect(village, 0, 0, 0, gs, 0, &coin_bonus);

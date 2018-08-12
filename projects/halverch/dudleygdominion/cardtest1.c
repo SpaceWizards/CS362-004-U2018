@@ -13,9 +13,7 @@ int main(){
   initializeGame(1,cardsList,1,gs);
   int coin_bonus = 0;
   int i;
-  for (i = 0; i < 5; i++){
-    drawCard(0, gs);
-  }
+  endTurn(gs);
   int beforesize = numHandCards(gs);
   gs->hand[0][0]= smithy;
   cardEffect(smithy, 0, 0, 0, gs, 0, &coin_bonus);
