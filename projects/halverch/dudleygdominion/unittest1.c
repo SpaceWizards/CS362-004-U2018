@@ -43,7 +43,7 @@ int main(){
   }
   //test if playing a normal card works
   gs->hand[0][0] = village;
-  if (playCard(0,0,0,0,gs) != -1){
+  if (playCard(0,0,0,0,gs) == -1){
     printf("Card Playing Returned -1\n");
   }
   else {

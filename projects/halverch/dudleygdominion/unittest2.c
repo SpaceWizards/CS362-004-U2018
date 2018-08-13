@@ -12,7 +12,9 @@ int main(){
   int * cardsList = kingdomCards(7,8,9,10,11,12,13,14,15,16);
   initializeGame(1,cardsList,1,gs);
   int i;
-  endTurn(gs);
+  for (i = 0; i < 5; i++){
+    drawCard(0, gs);
+  }
   //numHandCards should be 5 at the start of the game
   printf("starting numHandCards\n");
   if (numHandCards(gs)!= 5){
